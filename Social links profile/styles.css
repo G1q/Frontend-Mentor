@@ -1,0 +1,128 @@
+@font-face {
+	font-family: InterRegular;
+	font-weight: 400;
+	src: url('./assets/fonts/static/Inter-Regular.ttf');
+}
+
+@font-face {
+	font-family: InterSemiBold;
+	font-weight: 600;
+	src: url('./assets/fonts/static/Inter-SemiBold.ttf');
+}
+
+@font-face {
+	font-family: InterBold;
+	font-weight: 700;
+	src: url('./assets/fonts/static/Inter-Bold.ttf');
+}
+
+:root {
+	--primary-color: hsl(75, 94%, 57%);
+
+	--neutral-color-100: hsl(0, 0%, 100%);
+	--neutral-color-400: hsl(0, 0%, 30%);
+	--neutral-color-500: hsl(0, 0%, 20%);
+	--neutral-color-800: hsl(0, 0%, 8%);
+
+	--fs-400: 14px;
+
+	--transition: all 300ms ease-in;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	min-height: 100vh;
+	min-height: 100svh;
+	display: grid;
+	place-items: center;
+	background-color: var(--neutral-color-800);
+	color: var(--neutral-color-100);
+	line-height: 1.6;
+	font-family: InterRegular, system-ui;
+	font-size: var(--fs-400);
+}
+
+img {
+	display: block;
+	max-width: 100%;
+}
+
+.card {
+	max-width: 20rem;
+	background-color: var(--neutral-color-500);
+	padding: 2rem;
+	margin: 1rem;
+	border-radius: 1em;
+	font-family: InterRegular, system-ui;
+	text-align: center;
+}
+
+.card__image {
+	width: 80px;
+	aspect-ratio: 1;
+	border-radius: 50%;
+	margin-inline: auto;
+	object-fit: cover;
+	object-position: center;
+}
+
+.card__title {
+	font-family: InterSemiBold, system-ui;
+	font-size: 1.5rem;
+	margin-bottom: 0;
+}
+
+.card__location {
+	margin: 0;
+	font-family: InterBold, system-ui;
+	color: var(--primary-color);
+	font-size: 0.875em;
+}
+
+.card__info {
+	font-size: 0.875em;
+	padding-inline: 1rem;
+}
+
+.card__links {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.card__links li {
+	background-color: var(--neutral-color-400);
+	border-radius: 0.5em;
+	padding: 0.5rem 2rem;
+	transition: var(--transition);
+}
+
+.card__links li:is(:hover, :focus-visible) {
+	background-color: var(--primary-color);
+}
+
+.card__link {
+	font-family: InterSemiBold, system-ui;
+	font-size: 0.875rem;
+	text-decoration: none;
+	color: var(--neutral-color-100);
+	transition: var(--transition);
+}
+
+.card__links li:is(:hover, :focus-visible) .card__link {
+	color: var(--neutral-color-800);
+}
+
+.attribution {
+	font-size: 11px;
+	text-align: center;
+}
+.attribution a {
+	color: hsl(228, 45%, 44%);
+}
