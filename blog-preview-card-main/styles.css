@@ -1,0 +1,106 @@
+@font-face {
+	font-family: FigtreeSemiBold;
+	font-weight: 500;
+	src: url('./assets/fonts/static/Figtree-SemiBold.ttf');
+}
+
+@font-face {
+	font-family: FigtreeExtraBold;
+	font-weight: 800;
+	src: url('./assets/fonts/static/Figtree-ExtraBold.ttf');
+}
+
+:root {
+	--primary-color: hsl(47, 88%, 63%);
+
+	--neutral-color-100: hsl(0, 0%, 100%);
+	--neutral-color-500: hsl(0, 0%, 50%);
+	--neutral-color-700: hsl(0, 0%, 7%);
+
+	--fs: 16px;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	min-height: 100vh;
+	min-height: 100svh;
+	display: grid;
+	place-items: center;
+	background-color: var(--primary-color);
+	font-family: FigtreeSemiBold, system-ui;
+	line-height: 1.6;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+}
+
+h2,
+p {
+	margin: 0;
+}
+
+.card {
+	max-width: 25rem;
+	padding: 2rem;
+	border-radius: 1rem;
+	background-color: var(--neutral-color-100);
+	color: var(--neutral-color-700);
+	border: 1px solid var(--neutral-color-700);
+	box-shadow: 5px 5px 0 2px var(--neutral-color-700);
+}
+
+.card__image {
+	border-radius: 1rem;
+}
+
+.card__content {
+	text-align: left;
+	display: grid;
+	gap: 1rem;
+	margin-block: 1rem;
+}
+
+.card__tag {
+	width: max-content;
+	background-color: var(--primary-color);
+	padding: 0.25em 1em;
+	border-radius: 0.5rem;
+	font-family: FigtreeExtraBold, system-ui, sans-serif;
+}
+
+.card__title {
+	font-family: FigtreeExtraBold, system-ui, sans-serif;
+}
+
+.card__description {
+	color: var(--neutral-color-500);
+}
+
+.card footer {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+
+.card footer img {
+	width: 30px;
+	aspect-ratio: 1;
+	border-radius: 50%;
+}
+
+.card footer span {
+	font-family: FigtreeExtraBold, system-ui, sans-serif;
+}
+
+.attribution {
+	font-size: 11px;
+	text-align: center;
+}
+.attribution a {
+	color: hsl(228, 45%, 44%);
+}
