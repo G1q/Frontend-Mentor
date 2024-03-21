@@ -1,0 +1,125 @@
+@font-face {
+	font-family: WorkSansRegular;
+	font-weight: 400;
+	src: url('./assets/fonts/static/WorkSans-Regular.ttf');
+}
+
+@font-face {
+	font-family: WorkSansSemiBold;
+	font-weight: 600;
+	src: url('./assets/fonts/static/WorkSans-SemiBold.ttf');
+}
+
+@font-face {
+	font-family: WorkSansBold;
+	font-weight: 700;
+	src: url('./assets/fonts/static/WorkSans-Bold.ttf');
+}
+
+:root {
+	--pink-color-light: hsl(275, 100%, 97%);
+	--purple-color-light: hsl(292, 16%, 49%);
+	--purple-color-dark: hsl(292, 42%, 14%);
+
+	--neutral-color-100: hsl(0, 0%, 100%);
+
+	--fs: 16px;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	min-height: 100vh;
+	min-height: 100svh;
+	font-family: WorkSansRegular, system-ui, sans-serif;
+	background-color: var(--pink-color-light);
+}
+
+.faq {
+	max-width: 500px;
+	margin: 1rem auto;
+	background-color: var(--neutral-color-100);
+	color: var(--purple-color-dark);
+	padding: 1rem;
+	border-radius: 1rem;
+	box-shadow: 0 0 2px 1px var(--purple-color-light);
+}
+
+@media (max-width: 760px) {
+	.faq {
+		margin: 1rem;
+	}
+}
+
+.faq__title {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+
+.faq__title img {
+	width: 25px;
+	aspect-ratio: 1;
+}
+
+.faq__title span {
+	font-family: WorkSansBold;
+	font-size: 2.5rem;
+}
+
+.faq__container details {
+	margin-bottom: 2rem;
+}
+
+.faq__container details summary {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 2rem;
+	font-family: WorkSansSemiBold;
+	font-size: clamp(0.825rem, 0.5rem + 1vw, 1rem);
+	margin: 0;
+	padding: 0;
+	cursor: pointer;
+}
+
+.faq__container details summary:is(:hover, :focus-visible) {
+	color: var(--purple-color-light);
+}
+
+.faq__container details summary:focus-visible {
+	outline: 2px solid var(--purple-color-light);
+	outline-offset: 5px;
+	border-radius: 1rem;
+}
+
+.faq__container details summary::after {
+	content: '';
+	width: 1.5rem;
+	height: 1.5rem;
+	background-image: url('./assets/images/icon-plus.svg');
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.faq__container details[open] summary::after {
+	background-image: url('./assets/images/icon-minus.svg');
+}
+
+.faq__container details p {
+	color: var(--purple-color-light);
+	font-size: 0.875rem;
+	line-height: 1.6;
+}
+
+.attribution {
+	font-size: 11px;
+	text-align: center;
+}
+.attribution a {
+	color: hsl(228, 45%, 44%);
+}
