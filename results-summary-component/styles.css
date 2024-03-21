@@ -1,0 +1,198 @@
+@font-face {
+	font-family: HankenGroteskMedium;
+	font-weight: 500;
+	src: url('./assets/fonts/static/HankenGrotesk-Medium.ttf');
+}
+
+@font-face {
+	font-family: HankenGroteskBold;
+	font-weight: 700;
+	src: url('./assets/fonts/static/HankenGrotesk-Bold.ttf');
+}
+
+@font-face {
+	font-family: HankenGroteskExtraBold;
+	font-weight: 800;
+	src: url('./assets/fonts/static/HankenGrotesk-ExtraBold.ttf');
+}
+
+:root {
+	--red: hsl(0, 100%, 67%);
+	--orange: hsl(39, 100%, 56%);
+	--green: hsl(166, 100%, 37%);
+	--cobalt: hsl(234, 85%, 45%);
+
+	--blue-100: hsl(252, 100%, 67%);
+	--blue-200: hsl(241, 81%, 54%);
+
+	--violet-100: hsla(256, 72%, 46%, 1);
+	--violet-200: hsla(241, 72%, 46%, 0);
+
+	--neutral-100: hsl(0, 0%, 100%);
+	--neutral-blue: hsl(221, 100%, 96%);
+	--neutral-purple: hsl(241, 100%, 89%);
+	--neutral-dark-gray: hsl(224, 30%, 27%);
+
+	--fs: 18px;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	min-height: 100vh;
+	min-height: 100svh;
+	margin: 0;
+	display: grid;
+	place-items: center;
+	font-family: HankenGroteskMedium, system-ui, sans-serif;
+}
+
+button {
+	font: inherit;
+}
+
+.card {
+	max-width: 500px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	border-radius: 1rem;
+	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+	line-height: 1.5;
+}
+
+.card__result {
+	padding: 1rem 1.75rem;
+	border-radius: 1rem;
+	background-image: linear-gradient(var(--blue-100), var(--blue-200));
+	text-align: center;
+	color: var(--neutral-100);
+}
+
+.card__title {
+	color: var(--neutral-purple);
+	font-size: 1rem;
+	font-family: HankenGroteskMedium, system-ui, sans-serif;
+	font-weight: 500;
+}
+
+.card__score {
+	width: max-content;
+	margin-inline: auto;
+	border-radius: 50%;
+	padding: 2.75rem 3.25rem;
+	margin-block: 1rem;
+	background-image: radial-gradient(circle at bottom, var(--blue-100) 25%, var(--blue-200));
+}
+
+.card__score p {
+	margin: 0;
+	line-height: 1.1;
+}
+
+.large-text {
+	font-size: 3rem;
+	font-family: HankenGroteskBold, system-ui, sans-serif;
+}
+
+.small-text {
+	font-size: 0.875rem;
+	color: var(--neutral-purple);
+}
+
+.card__subtitle {
+	color: var(--neutral-100);
+	font-size: 1.25rem;
+	font-family: HankenGroteskBold, system-ui, sans-serif;
+}
+
+.card__info {
+	font-size: 0.875rem;
+	color: var(--neutral-purple);
+}
+
+.card__summary {
+	padding: 1rem 1.75rem;
+	display: flex;
+	flex-direction: column;
+}
+
+.card__summary--title {
+	color: var(--neutral-dark-gray);
+	font-size: 1rem;
+	font-family: HankenGroteskBold, system-ui, sans-serif;
+	font-weight: 700;
+}
+
+.card__summary--details {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	list-style-type: none;
+	padding: 0;
+}
+
+.card__summary--details li {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	font-size: 0.875rem;
+	padding: 0.5rem;
+	background-color: color-mix(in oklab, var(--_category-color) 20%, white);
+	border-radius: 0.25rem;
+}
+
+.card__summary--details li[data-category='reaction'] {
+	--_category-color: var(--red);
+}
+.card__summary--details li[data-category='memory'] {
+	--_category-color: var(--orange);
+}
+.card__summary--details li[data-category='verbal'] {
+	--_category-color: var(--green);
+}
+.card__summary--details li[data-category='visual'] {
+	--_category-color: var(--cobalt);
+}
+
+.category__title {
+	flex: 1;
+	color: var(--_category-color);
+}
+
+.card__btn {
+	border: none;
+	border-radius: 50vmax;
+	background-color: var(--neutral-dark-gray);
+	color: var(--neutral-100);
+	cursor: pointer;
+	padding: 0.5rem 1rem;
+	margin-top: 2rem;
+}
+
+.card__btn:is(:hover, :focus-visible) {
+	background-color: var(--blue-200);
+}
+
+.card__btn:focus-visible {
+	outline: 2px solid var(--neutral-dark-gray);
+	outline-offset: 3px;
+}
+
+@media (width < 760px) {
+	.card {
+		grid-template-columns: 1fr;
+	}
+	.card__result {
+		border-radius: 0 0 1rem 1rem;
+	}
+}
+
+.attribution {
+	font-size: 11px;
+	text-align: center;
+}
+.attribution a {
+	color: hsl(228, 45%, 44%);
+}
