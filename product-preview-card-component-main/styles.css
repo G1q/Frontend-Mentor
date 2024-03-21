@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;1,9..144,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;1,700&display=swap');
+
+:root {
+	--dark-cyan: hsl(158, 36%, 37%);
+	--cream: hsl(30, 38%, 92%);
+
+	--neutral-100: hsl(0, 0%, 100%);
+	--neutral-300: hsl(228, 12%, 48%);
+	--neutral-700: hsl(212, 21%, 14%);
+
+	--fs: 14px;
+
+	--ff-primary: 'Fraunces', serif;
+	--ff-secondary: 'Montserrat', sans-serif;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	min-height: 100vh;
+	min-height: 100svh;
+	display: grid;
+	place-items: center;
+	background-color: var(--cream);
+	font-size: var(--fs);
+	font-family: var(--ff-secondary);
+}
+
+img {
+	display: block;
+	max-width: 100%;
+}
+
+h1 {
+	margin: 0;
+	line-height: 1;
+}
+
+p {
+	margin: 0;
+	line-height: 1.6;
+}
+
+button {
+	font: inherit;
+}
+
+.card {
+	max-width: 600px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	border-radius: 1rem;
+	overflow: hidden;
+	background-color: var(--neutral-100);
+	margin: 1rem;
+}
+
+@media (width < 500px) {
+	.card {
+		grid-template-columns: 1fr;
+	}
+}
+
+.card__content {
+	padding: 2rem;
+	display: grid;
+	gap: 1rem;
+}
+
+.card__category {
+	text-transform: uppercase;
+	color: var(--neutral-300);
+	font-size: 0.75rem;
+	letter-spacing: 5px;
+}
+
+.card__title {
+	font-family: var(--ff-primary);
+	color: var(--neutral-700);
+}
+
+.card__info {
+	color: var(--neutral-300);
+}
+
+.card__price {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+
+.card__price ins {
+	font-family: var(--ff-primary);
+	color: var(--dark-cyan);
+	font-size: 2rem;
+	text-decoration: none;
+}
+
+.card__price del {
+	color: var(--neutral-300);
+	font-size: 0.825rem;
+}
+
+.card__btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
+	color: var(--neutral-100);
+	background-color: var(--dark-cyan);
+	border: none;
+	border-radius: 0.5rem;
+	padding: 0.5rem 1rem;
+	font-size: 1rem;
+	cursor: pointer;
+	transition: all 250ms ease-in-out;
+}
+
+.card__btn:is(:hover, :focus-visible) {
+	background-color: color-mix(in oklab, var(--dark-cyan) 50%, black);
+}
+
+.card__btn:focus-visible {
+	outline: 3px solid var(--dark-cyan);
+	outline-offset: 3px;
+}
+
+.attribution {
+	font-size: 11px;
+	text-align: center;
+}
+.attribution a {
+	color: hsl(228, 45%, 44%);
+}
