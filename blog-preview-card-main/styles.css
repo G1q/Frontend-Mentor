@@ -75,6 +75,13 @@ p {
 
 .card__title {
 	font-family: FigtreeExtraBold, system-ui, sans-serif;
+	text-decoration: none;
+	color: var(--neutral-color-700);
+	transition: color 250ms ease-in-out;
+}
+
+.card__title:is(:hover, :focus-visible) {
+	color: var(--primary-color);
 }
 
 .card__description {
