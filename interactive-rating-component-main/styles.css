@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,700;1,700&display=swap');
+
+:root {
+	--primary-color: hsl(25, 97%, 53%);
+
+	--neutral-100: hsl(0, 0%, 100%);
+	--neutral-300: hsl(217, 12%, 63%);
+	--neutral-400: hsl(216, 12%, 54%);
+
+	--blue-600: hsl(213, 19%, 18%);
+	--blue-700: hsl(216, 12%, 8%);
+
+	--fs: 15px;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	min-height: 100vh;
+	min-height: 100svh;
+	display: grid;
+	place-items: center;
+	font-family: 'Overpass', sans-serif;
+	background-color: var(--blue-700);
+}
+
+img {
+	display: block;
+	max-width: 100%;
+}
+
+.card {
+	max-width: 320px;
+	background-color: var(--blue-600);
+	padding: 2rem;
+	border-radius: 1rem;
+}
+
+.rating-state {
+	/* display: none; */
+}
+
+.rating-state__img {
+	width: 30px;
+	height: 30px;
+	background-color: var(--blue-700);
+	border-radius: 50%;
+	display: grid;
+	place-items: center;
+}
+
+.card__title {
+	color: var(--neutral-100);
+}
+
+.card__info {
+	color: var(--neutral-300);
+	font-size: 0.8rem;
+	line-height: 1.6;
+}
+
+.card__form {
+	display: grid;
+	gap: 2rem;
+}
+
+.form__ratings {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
+}
+
+.input__group label {
+	display: block;
+	color: var(--neutral-400);
+	background-color: var(--blue-700);
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	display: grid;
+	place-items: center;
+	line-height: 1;
+	transition: all 250ms ease-in-out;
+}
+
+.input__group label:is(:hover, :focus-visible) {
+	background-color: var(--primary-color);
+	color: var(--neutral-100);
+}
+
+.input__group input[type='radio'] {
+	display: none;
+	visibility: hidden;
+}
+
+.input__group:has(input:checked) label {
+	background-color: var(--neutral-400);
+	color: var(--neutral-100);
+}
+
+.form__button {
+	color: var(--neutral-100);
+	background-color: var(--primary-color);
+	border: none;
+	cursor: pointer;
+	padding: 0.75rem 1rem;
+	border-radius: 50vmax;
+	text-transform: uppercase;
+	font-size: 0.75rem;
+	letter-spacing: 2px;
+	transition: all 250ms ease-in-out;
+	font-weight: 700;
+}
+
+.form__button:is(:hover, :focus-visible) {
+	color: var(--primary-color);
+	background-color: var(--neutral-100);
+}
+
+.thank-you-state {
+	display: none;
+	text-align: center;
+}
+
+.thank-you-state img {
+	margin-inline: auto;
+}
+
+.ty__rating {
+	color: var(--primary-color);
+	font-size: 0.825rem;
+	background-color: var(--blue-700);
+	width: max-content;
+	margin-inline: auto;
+	padding: 0.5rem 1rem;
+	border-radius: 50vmax;
+}
+
+.attribution {
+	font-size: 11px;
+	text-align: center;
+}
+.attribution a {
+	color: hsl(228, 45%, 44%);
+}
